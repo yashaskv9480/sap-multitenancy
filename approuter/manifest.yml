@@ -1,0 +1,25 @@
+applications:
+- name: multitenant-approuter
+  instances: 1
+  memory: 128M
+  path: .
+  routes:
+    - route: multitenant-approuter.cfapps.ap10.hana.ondemand.com
+  buildpacks:
+    - nodejs_buildpack
+  env:  
+    TENANT_HOST_PATTERN: "^(.*)-multitenant-approuter.cfapps.ap10.hana.ondemand.com"  #The regex is used to extract the tenant from the host name
+    destinations: >
+      [{
+        "name": "server-destination",
+        "url": "https://multitenant-backend.cfapps.ap10.hana.ondemand.com",
+        "forwardAuthToken": true
+       },
+      {
+        "name": "test-destination",
+        "url": "https://www.google.com",
+        "forwardAuthToken": true
+       }] 
+  timeout: 180
+  services:
+      - rie-utility-xsuaa-multitenant

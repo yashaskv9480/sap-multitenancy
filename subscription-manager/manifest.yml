@@ -1,0 +1,11 @@
+applications:
+- name: multitenant-subscription-manager
+  instances: 1
+  memory: 128M
+  path: .
+  routes:
+    - route: multitenant-subscription-manager.cfapps.ap10.hana.ondemand.com
+  buildpacks:
+    - nodejs_buildpack
+  services:
+      - rie-utility-xsuaa-multitenant

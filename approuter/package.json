@@ -1,0 +1,12 @@
+{
+  "name": "approuter",
+  "dependencies": {
+    "@sap/approuter": "^9.0.2",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

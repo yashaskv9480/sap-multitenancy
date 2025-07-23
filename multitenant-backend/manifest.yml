@@ -1,0 +1,11 @@
+applications:
+- name: multitenant-backend
+  instances: 1
+  memory: 128M
+  path: .
+  routes:
+    - route: multitenant-backend.cfapps.ap10.hana.ondemand.com
+  buildpacks:
+    - nodejs_buildpack
+  services:
+      - rie-utility-xsuaa-multitenant

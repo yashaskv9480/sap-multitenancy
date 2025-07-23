@@ -1,0 +1,13 @@
+{
+  "xsappname": "rie-utility-xsuaa-multitenant",
+  "appName": "multitenant-backend",
+  "appUrls": {
+    "getDependencies": "https://multitenant-subscription-manager.cfapps.ap10.hana.ondemand.com/callback/application/v1/dependencies",
+    "onSubscription": "https://multitenant-subscription-manager.cfapps.ap10.hana.ondemand.com/callback/application/v1/tenants/{tenantId}",
+    "onSubscriptionAsync": false,
+    "onUnSubscriptionAsync": false
+  },
+  "displayName": "Multitenant Example Service",
+  "description": "Multitenant Example Service",
+  "category": "Provider: TIA"
+}
