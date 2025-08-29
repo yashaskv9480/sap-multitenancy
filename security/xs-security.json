@@ -1,0 +1,61 @@
+{
+  "xsappname": "multitenant-xsuaa",
+  "tenant-mode": "shared",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.view",
+      "description": "With this scope, USER can view."
+    },
+    {
+      "name": "$XSAPPNAME.execute",
+      "description": "With this scope, USER can execute."
+    },
+    {
+      "name": "$XSAPPNAME.snow-manager",
+      "description": "With this scope, USER can execute commands in SNow"
+    },
+    {
+      "name": "$XSAPPNAME.admin",
+      "description": "Admin scope."
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "Role to view the Navigate Apps",
+      "scope-references": ["$XSAPPNAME.view"]
+    },
+    {
+      "name": "Executer",
+      "description": "Role to Execute commands",
+      "scope-references": ["$XSAPPNAME.view", "$XSAPPNAME.execute"]
+    },
+    {
+      "name": "SNow-User",
+      "description": "Role to Execute commands in SNow",
+      "scope-references": ["$XSAPPNAME.view"]
+    },
+    {
+      "name": "SNow-Manager",
+      "description": "Role to Manage SNow",
+      "scope-references": ["$XSAPPNAME.view", "$XSAPPNAME.snow-manager"]
+    },
+    {
+      "name": "Admin",
+      "description": "Admin Role",
+      "scope-references": [
+        "$XSAPPNAME.view",
+        "$XSAPPNAME.execute",
+        "$XSAPPNAME.admin",
+        "$XSAPPNAME.snow-manager"
+      ]
+    }
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://**.cfapps.ap10.hana.ondemand.com/**",
+      "http://localhost:5000/**",
+      "https://oauth.pstmn.io/v1/callback"
+    ]
+  }
+}

@@ -22,4 +22,4 @@ applications:
        }] 
   timeout: 180
   services:
-      - rie-utility-xsuaa-multitenant
+      - multitenant-xsuaa

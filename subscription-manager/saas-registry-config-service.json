@@ -1,0 +1,13 @@
+{
+  "xsappname": "multitenant-xsuaa",
+  "appName": "multitenant-backend-service-plan",
+  "appUrls": {
+    "getDependencies": "https://multitenant-subscription-manager.cfapps.ap10.hana.ondemand.com/callback/service/v1/dependencies",
+    "onSubscription": "https://multitenant-subscription-manager.cfapps.ap10.hana.ondemand.com/callback/service/v1/tenants/{tenantId}",
+    "onSubscriptionAsync": false,
+    "onUnSubscriptionAsync": false
+  },
+  "displayName": "Multitenant Example Service - Service Plan",
+  "description": "Multitenant Example Service - Service Plan",
+  "category": "Provider: TIA"
+}
