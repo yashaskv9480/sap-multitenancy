@@ -8,4 +8,5 @@ applications:
   buildpacks:
     - nodejs_buildpack
   services:
-      - multitenant-xsuaa
+    - multitenant-xsuaa
+    - job-schedular-standard

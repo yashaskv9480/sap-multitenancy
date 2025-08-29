@@ -17,6 +17,11 @@
     {
       "name": "$XSAPPNAME.admin",
       "description": "Admin scope."
+    },
+    {
+      "name": "$XSAPPNAME.Jobschedular",
+      "description": "Users of my great app need this special role",
+      "grant-as-authority-to-apps": ["$XSSERVICENAME(job-schedular-standard)"]
     }
   ],
   "role-templates": [
